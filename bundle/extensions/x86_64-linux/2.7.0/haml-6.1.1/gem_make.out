@@ -1,0 +1,16 @@
+current directory: /home/plantfrau/bundle/gems/haml-6.1.1/ext/haml
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.7.0 -r ./siteconf20230713-3903-17l77yh.rb extconf.rb
+creating Makefile
+
+current directory: /home/plantfrau/bundle/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" clean
+
+current directory: /home/plantfrau/bundle/gems/haml-6.1.1/ext/haml
+make "DESTDIR="
+compiling haml.c
+compiling hescape.c
+linking shared-object haml/haml.so
+
+current directory: /home/plantfrau/bundle/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 haml.so ./.gem.20230713-3903-1ubc9q0/haml

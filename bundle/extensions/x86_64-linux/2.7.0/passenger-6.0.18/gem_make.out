@@ -1,0 +1,17 @@
+current directory: /home/plantfrau/bundle/gems/passenger-6.0.18/src/helper-scripts/download_binaries
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.7.0 -r ./siteconf20230713-1428-ld0u71.rb extconf.rb
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.18/rubyext-ruby-2.7.8-x86_64-linux.tar.gz into /home/plantfrau/bundle/gems/passenger-6.0.18/download_cache
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.18/nginx-1.24.0-x86_64-linux.tar.gz into /home/plantfrau/bundle/gems/passenger-6.0.18/download_cache
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.18/agent-x86_64-linux.tar.gz into /home/plantfrau/bundle/gems/passenger-6.0.18/download_cache
+
+current directory: /home/plantfrau/bundle/gems/passenger-6.0.18/src/helper-scripts/download_binaries
+make "DESTDIR=" clean
+true
+
+current directory: /home/plantfrau/bundle/gems/passenger-6.0.18/src/helper-scripts/download_binaries
+make "DESTDIR="
+true
+
+current directory: /home/plantfrau/bundle/gems/passenger-6.0.18/src/helper-scripts/download_binaries
+make "DESTDIR=" install
+true

@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    container_name: plantfrau_postgres
+    environment:
+      POSTGRES_USER: 'pkay'
+      POSTGRES_PASSWORD: '123456'
+      POSTGRES_DB: 'plantfrau_db'
+      PGDATA: '/var/lib/postgresql/data'
+    ports:
+      - 5433:5432
+    env_file:
+      - ../.env
+    volumes:
+      - ../.data/volumes/database:/var/lib/postgresql/data
+  plantfrau:
+    container_name: plantfrau
+    build:
+      context: ..
+      dockerfile: docker-dev/Dockerfile
+    env_file:
+      - ../.env
+    volumes:
+      - ../.:/home/plantfrau/src:rw
+      - ../bundle:/home/plantfrau/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres

@@ -39,3 +39,6 @@ web/.docker/volumes
 
 # DB files
 .data/*
+
+#Ignore env file
+.env

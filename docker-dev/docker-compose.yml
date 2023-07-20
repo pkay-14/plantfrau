@@ -14,6 +14,20 @@ services:
       - ../.env
     volumes:
       - ../.data/volumes/database:/var/lib/postgresql/data
+  test_db:
+    image: postgres
+    container_name: test_db
+    environment:
+      POSTGRES_USER: 'pkay'
+      POSTGRES_PASSWORD: '123456'
+      POSTGRES_DB: 'plantfrau_test_db'
+      PGDATA: '/var/lib/test/postgresql/data'
+    ports:
+      - 5443:5443
+    env_file:
+      - ../.env
+    volumes:
+      - ../.data/volumes/test/database:/var/lib/test/postgresql/data
   plantfrau:
     container_name: plantfrau
     build:
@@ -28,3 +42,4 @@ services:
       - "3000:3000"
     depends_on:
       - postgres
+      - test_db

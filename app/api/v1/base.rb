@@ -4,6 +4,7 @@ module V1
     version :v1, using: :path
     format 'json'
     default_format :json
+    error_formatter :json, JsonErrorFormatter
 
     mount Plants
   end

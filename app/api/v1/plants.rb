@@ -5,6 +5,8 @@ class V1::Plants < Grape::API
     get '/' do
       plants = Entities::Plant.represent Plant.all
       present :plants, plants
+    rescue => e
+      error!(e)
     end
 
     desc 'creates new plant'
@@ -13,6 +15,8 @@ class V1::Plants < Grape::API
     end
     post '/' do
       Plant.create!(params)
+    rescue => e
+      error!(e)
     end
 
     route_param :id do
@@ -20,6 +24,8 @@ class V1::Plants < Grape::API
       get do
         plant = Entities::Plant.represent Plant.find(params[:id])
         present :plant, plant
+      rescue => e
+        error!(e)
       end
 
       desc 'updates a plant'
@@ -29,11 +35,15 @@ class V1::Plants < Grape::API
       put do
         plant = Plant.find(params[:id])
         plant.update(params)
+      rescue => e
+        error!(e)
       end
 
       desc 'deletes a plant'
       delete do
         Plant.destroy(params[:id])
+      rescue => e
+        error!(e)
       end
     end
   end

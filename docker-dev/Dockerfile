@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:3.0
 
 ENV APP_USER plantfrau
 ENV APP_GROUP plantfrau

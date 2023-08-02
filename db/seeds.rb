@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+(1..10).each do |count|
+  Plant.create(name: "plant #{count}", family: "plant family #{count}", botanical_name: "botanical #{count}",
+               description: "Plant #{count} desc")
+end

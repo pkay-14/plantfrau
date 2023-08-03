@@ -1,6 +1,10 @@
 class V1::Plants < Grape::API
   namespace :plants do
     helpers V1::Helpers::PlantHelpers
+    params do
+      requires :api_token, type: String, allow_blank: false
+    end
+
     desc 'returns all plants'
     get '/' do
       plants = Entities::Plant.represent Plant.all
@@ -11,10 +15,12 @@ class V1::Plants < Grape::API
 
     desc 'creates new plant'
     params do
-      use :plant_params
+      requires :plant, type: JSON do
+        use :plant_params
+      end
     end
     post '/' do
-      Plant.create!(params)
+      Plant.create!(params[:plant])
     rescue => e
       error!(e)
     end
@@ -30,11 +36,13 @@ class V1::Plants < Grape::API
 
       desc 'updates a plant'
       params do
-        use :plant_params
+        requires :plant, type: JSON do
+          use :plant_params
+        end
       end
       put do
         plant = Plant.find(params[:id])
-        plant.update(params)
+        plant.update(params[:plant])
       rescue => e
         error!(e)
       end

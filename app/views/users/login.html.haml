@@ -1,0 +1,52 @@
+.form
+  %ul.tab-group
+    %li.tab.active
+      %a{href: "#signup"} Sign Up
+    %li.tab
+      %a{href: "#login"} Log In
+  .tab-content
+    #signup
+      %h1 Sign Up for Free
+      %form{action: "/", method: "post"}
+        .top-row
+          .field-wrap
+            %label
+              First Name
+              %span.req *
+            %input{autocomplete: "off", required: "", type: "text"}/
+          .field-wrap
+            %label
+              Last Name
+              %span.req *
+            %input{autocomplete: "off", required: "", type: "text"}/
+        .field-wrap
+          %label
+            Email Address
+            %span.req *
+          %input{autocomplete: "off", required: "", type: "email"}/
+        .field-wrap
+          %label
+            Set A Password
+            %span.req *
+          %input{autocomplete: "off", required: "", type: "password"}/
+        = succeed "Get" do
+          %button.button.button-block{type: "submit"}
+    #login
+      %h1 Welcome Back!
+      %form{action: "/", method: "post"}
+        .field-wrap
+          %label
+            Email Address
+            %span.req *
+          %input{autocomplete: "off", required: "", type: "email"}/
+        .field-wrap
+          %label
+            Password
+            %span.req *
+          %input{autocomplete: "off", required: "", type: "password"}/
+        %p.forgot
+          %a{href: "#"} Forgot Password?
+        = succeed "Log" do
+          %button.button.button-block
+  / tab-content
+/ /form

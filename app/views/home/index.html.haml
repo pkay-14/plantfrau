@@ -1,16 +1,25 @@
+= button_to( "Log Out", destroy_user_session_path,method: :delete)
+%div{style: "text-align: right"}
+  = "User: #{current_user.email}"
 %div{style: "width: 100%; text-align: center"}
   %h1 Welcome to PlantFrau!!!
+  %br
 - @plants.each do |plant|
   %div{style: "width: 100%; text-align: left"}
-    %h2
-      Name:
-      = plant.name
-    %h3
-      Botanical name:
-      = plant.botanical_name
-    %h4
-      Family:
-      = plant.family
-    %p
-      Description:
-      = plant.description
+    %table
+      %thead
+        %tr
+          %b
+            = "#{plant.name.capitalize} (#{plant.botanical_name})"
+      %tr
+        %td
+          Family:
+        %td
+          = plant.family
+      %tr
+        %td
+          Description:
+        %td
+          = plant.description
+
+  %hr

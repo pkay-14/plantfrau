@@ -1,4 +1,4 @@
-= button_to( "Log Out", destroy_user_session_path,method: :delete)
+= button_to( "Log Out", destroy_user_session_path, method: :delete)
 %div{style: "text-align: right"}
   = "User: #{current_user.email}"
 %div{style: "width: 100%; text-align: center"}
@@ -6,20 +6,38 @@
   %br
 - @plants.each do |plant|
   %div{style: "width: 100%; text-align: left"}
-    %table
-      %thead
-        %tr
-          %b
-            = "#{plant.name.capitalize} (#{plant.botanical_name})"
-      %tr
-        %td
-          Family:
-        %td
-          = plant.family
-      %tr
-        %td
-          Description:
-        %td
-          = plant.description
+    = form_for(:plant, action: :edit, multipart: true,  method: :put, :url => {:controller => "home", :action => "edit"})  do |f|
+      %table
+        %thead
+          %tr
+            %b
+              = "#{plant.name.capitalize} (#{plant.botanical_name})"
 
-  %hr
+        %tr
+          %td
+            %input{:type=>"hidden", :value=> plant.id, :name=>:id}
+            -if plant.images.attached?
+              %img{src: url_for(plant.images.last), width: '100px'}
+        %tr
+          %td
+            %label{for: "family", style: "font-style: italic; font-size: 10px"} Family:
+            = plant.family
+
+        %tr
+          %td
+            %label{for: "description", style: "font-style: italic; font-size: 10px"}Description:
+            = plant.description
+
+
+        %tr{style: "font-size: small; height: 10px" }
+          %td
+            -if plant.images&.attached?
+              %label{for: "image"} update photo
+              = f.file_field :image
+            -else
+              %label{for: "image"} Add photo:
+              %file_field{name: :image}
+              = f.file_field :image
+            = f.submit
+
+    %hr

@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
+# generate random attributes for plant
 (1..10).each do |count|
-  Plant.create(name: "plant #{count}", family: "plant family #{count}", botanical_name: "botanical #{count}",
-               description: "Plant #{count} desc")
+  fake_plant = Plant.generate_fake_attributes
+  Plant.create(name: fake_plant[:name], family: fake_plant[:family], botanical_name: fake_plant[:botanical_name], description: fake_plant[:description])
 end

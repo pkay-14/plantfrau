@@ -56,6 +56,7 @@ gem 'pry'
 gem 'pry-remote'
 gem 'jsonapi-serializer'
 gem 'devise'
+gem 'faker'
 
 
 group :development, :test do

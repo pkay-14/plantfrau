@@ -45,11 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_085741) do
   create_table "additional_infos", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.bigint "plants_id", null: false
+    t.bigint "plant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plants_id", "category"], name: "index_additional_infos_on_plants_id_and_category", unique: true
-    t.index ["plants_id"], name: "index_additional_infos_on_plants_id"
+    t.index ["plant_id", "category"], name: "index_additional_infos_on_plant_id_and_category", unique: true
+    t.index ["plant_id"], name: "index_additional_infos_on_plant_id"
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -66,11 +66,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_085741) do
   create_table "instructions", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.bigint "plants_id", null: false
+    t.bigint "plant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plants_id", "category"], name: "index_instructions_on_plants_id_and_category", unique: true
-    t.index ["plants_id"], name: "index_instructions_on_plants_id"
+    t.index ["plant_id", "category"], name: "index_instructions_on_plant_id_and_category", unique: true
+    t.index ["plant_id"], name: "index_instructions_on_plant_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -104,6 +104,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_085741) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "additional_infos", "plants", column: "plants_id"
-  add_foreign_key "instructions", "plants", column: "plants_id"
+  add_foreign_key "additional_infos", "plants"
+  add_foreign_key "instructions", "plants"
 end

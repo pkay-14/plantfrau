@@ -1,3 +1,3 @@
 class AdditionalInfo < ApplicationRecord
-  belongs_to :plants
+  belongs_to :plant
 end

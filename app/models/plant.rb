@@ -1,7 +1,11 @@
 class Plant < ApplicationRecord
-  has_many :instructions
-  has_many :additional_infos
-  has_many_attached :images
+  has_many :instructions, dependent: :destroy
+  has_many :additional_infos, dependent: :destroy
+  has_many_attached :images, dependent: :destroy
+
+  accepts_nested_attributes_for :instructions, allow_destroy:  true
+  accepts_nested_attributes_for :additional_infos, allow_destroy:  true
+
 
   scope :descending, -> { order(updated_at: :desc) }
 

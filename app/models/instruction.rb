@@ -1,3 +1,5 @@
 class Instruction < ApplicationRecord
-  belongs_to :plants
+  belongs_to :plant
+
+  CATEGORIES = %w(Water Light)
 end

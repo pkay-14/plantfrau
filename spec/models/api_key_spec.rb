@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ApiKey, type: :model do
+RSpec.fdescribe ApiKey, type: :model do
   let(:user) do
     Fabricate(:user)
   end

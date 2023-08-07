@@ -19,6 +19,7 @@ WORKDIR /home/$APP_USER/src
 
 RUN gem install bundler
 
+RUN apt-get install expect -y
 # Configure endpoint.
 COPY ./docker-dev/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh

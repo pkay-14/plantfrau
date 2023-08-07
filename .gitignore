@@ -42,3 +42,5 @@ web/.docker/volumes
 
 #Ignore env file
 .env
+
+/bundle

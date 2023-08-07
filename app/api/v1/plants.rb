@@ -7,7 +7,7 @@ class V1::Plants < Grape::API
 
     desc 'returns all plants'
     get '/' do
-      plants = Entities::Plant.represent Plant.all
+      plants = Entities::Plant.represent Plant.descending
       present :plants, plants
     rescue => e
       error!(e)

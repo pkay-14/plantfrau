@@ -5,5 +5,7 @@ PlantFrau::Application.routes.draw do
 
   get 'signout', to: 'sessions#destroy', as: 'signout'
   put 'edit', to: 'home#edit'
+
+  resources :plants, only: [:index]
   root :to => 'home#index'
 end

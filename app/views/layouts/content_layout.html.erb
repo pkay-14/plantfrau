@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>PlantFrau</title>
+      <%= stylesheet_link_tag "content_layout.css", "data-turbo-track": "reload" %>
+      <%= javascript_include_tag "content.js", "data-turbolinks-track" => true  %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body id="page-body">
+    <%= yield %>
+    </body>
+  </html>

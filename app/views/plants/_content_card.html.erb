@@ -1,14 +1,24 @@
 <%= stylesheet_link_tag "plants/content_card.css", "data-turbo-track": "reload" %>
-<div class="container">
-  <div class="wrapper">
-    <div class="banner-image"> </div>
-      <h1> Toyota Supra</h1>
-      <p>Lorem ipsum dolor sit amet, <br/>
-        consectetur adipiscing elit.
-      </p>
+<% @plants.each do |plant| %>
+  <div class="container">
+    <div class="wrapper">
+      <div class="banner-image">
+        <% if plant.images.present? %>
+          <%= image_tag url_for(plant.images.first)%>
+        <% else %>
+          <%= image_tag "plant_sketch"%>
+        <% end %>
+      </div>
+      <div class="content-footer">
+        <div class="name">
+          <h1><%= plant.name %></h1>
+          <p><%= plant.botanical_name %></p>
+        </div>
+        <div class="button-wrapper">
+          <button class="btn details">DETAILS</button>
+          <button class="btn star"><i class="fa fa-star-o" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="button-wrapper">
-    <button class="btn outline">DETAILS</button>
-    <button class="btn fill">BUY NOW</button>
-  </div>
-</div>
+<% end %>

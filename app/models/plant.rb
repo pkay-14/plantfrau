@@ -6,6 +6,7 @@ class Plant < ApplicationRecord
   accepts_nested_attributes_for :instructions, allow_destroy:  true
   accepts_nested_attributes_for :additional_infos, allow_destroy:  true
 
+  validates :name, presence: true
 
   scope :descending, -> { order(updated_at: :desc) }
 

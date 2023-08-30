@@ -1,0 +1,151 @@
+body {
+  font-size: 0;
+  background-image: url(plant_wallpaper.jpg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.nav-wrap{
+  width: 15%;
+  height: 100%;
+  font-size: 30px;
+  margin: 0;
+  top: 0;
+}
+
+.navbar {
+  background-color: darkgreen;
+  font-size: 30px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.3s;
+  position: fixed;
+  width: 15%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.logo-wrapper{
+  top: 0;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 25px;
+  text-align: center;
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+}
+
+#sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  transition: 0.3s;
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-footer{
+  bottom: 0;
+  text-align: center;
+  padding: 5px;
+  background-color: darkgreen;
+  box-sizing: border-box;
+
+}
+
+.corporate-name{
+  font-weight: bold;
+  font-family: "Brush Script MT";
+  color: white;
+}
+
+.main{
+  top: 0;
+  width: 85%;
+  height: 100%;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.head-area{
+  top: 0;
+  height: 15%;
+  width: 100%;
+  background-color: snow;
+  text-align: center;
+  justify-content: center;
+  border: solid 1px #a8c8a8;
+  box-sizing: content-box;
+  display: flex;
+
+  .searchbar{
+    color: black;
+    width: 40%;
+    text-align: center;
+    margin: 12px auto;
+    box-sizing: content-box;
+    background-color: white;
+
+  }
+}
+
+.btn-menu{
+  float: left;
+  margin: 10px;
+  display: none;
+  width: 50px;
+}
+
+.btn-close{
+  float: right;
+  visibility: hidden;
+}
+
+.searchbar input {
+  width: 80%;
+  border-color: Transparent;
+  outline: none;
+  padding: 2px;
+  text-align: center;
+  font-size: large;
+  top: 0;
+  color: black;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  display: inline;
+}
+
+#sidenav a:hover{
+  color: greenyellow;
+}
+@media screen and (max-width: 600px) {
+  body{overflow: hidden}
+  .sidenav {width: 0; height: 100%}
+  .main{ width: 100%}
+  .head-area{height: 50px; text-align: right; display: block}
+  .searchbar{width: 60%; font-size: medium; right: 0; margin: 10px auto}
+  .searchbar input{font-size: 14px}
+  .btn-menu{ display: block; z-index: 1; margin: 5px; width: 30px}
+  .btn-close{visibility: visible}
+}

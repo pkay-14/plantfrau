@@ -17,7 +17,7 @@
           %td
             %input{:type=>"hidden", :value=> plant.id, :name=>:id}
             -if plant.images.attached?
-              %img{src: url_for(plant.images.last), width: '100px'}
+              %img{src: url_for(plant.images.first), width: '100px'}
         %tr
           %td
             %label{for: "family", style: "font-style: italic; font-size: 10px"} Family:

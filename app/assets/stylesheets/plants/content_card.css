@@ -15,7 +15,7 @@
   justify-content:center;
   text-align: center;
   height: 70%;
-  width: 60%;
+  width: 50%;
   margin: 10px auto;
 }
 
@@ -107,8 +107,8 @@ p {
 
 }
 
-/*@media screen and (max-width: 910px), (max-height: 600px) {*/
-/*  .banner-image{*/
-/*    height: 300px;*/
-/*  }*/
-/*}*/
+@media screen and (max-width: 600px) {
+  .banner-image{
+    height: 300px;
+  }
+}

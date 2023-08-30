@@ -7,7 +7,7 @@ ruby "3.0.6"
 gem "rails", "~> 7.0.6"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -48,7 +48,8 @@ gem 'grape'
 gem 'grape-entity'
 gem 'interactor-rails'
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
+gem 'compass'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

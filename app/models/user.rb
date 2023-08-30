@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
   has_many :api_keys
+
+  validates :email, presence: true, uniqueness: true
 end

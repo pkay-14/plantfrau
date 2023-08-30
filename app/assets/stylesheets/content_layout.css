@@ -87,7 +87,7 @@ body {
   top: 0;
   height: 15%;
   width: 100%;
-  background-color: snow;
+  background-color: mintcream;
   text-align: center;
   justify-content: center;
   border: solid 1px #a8c8a8;
@@ -140,7 +140,6 @@ body {
   color: greenyellow;
 }
 @media screen and (max-width: 600px) {
-  body{overflow: hidden}
   .sidenav {width: 0; height: 100%}
   .main{ width: 100%}
   .head-area{height: 50px; text-align: right; display: block}
